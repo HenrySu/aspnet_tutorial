@@ -22,7 +22,7 @@ namespace webapi_spike.Controllers
 
             if (!_context.TodoItems.Any())
             {
-                _context.TodoItems.Add(new TodoItem() {Name = "wtf",Id = 1});
+                _context.TodoItems.Add(new TodoItem() {Name = "wtf"});
                 _context.SaveChanges();
             }
         }
