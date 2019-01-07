@@ -32,7 +32,7 @@ namespace BooksApi.Controllers{
             return CreatedAtAction("GetBook", new {Id = book.Id.ToString()}, book);
         }
 
-        [HttpPut]
+        [HttpPut("{id:length(24)}")]
         public IActionResult UpdateBook(string id, Book bookIn){
             var book = _bookService.Get(id);
             if(book == null){
@@ -43,7 +43,7 @@ namespace BooksApi.Controllers{
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:length(24)}")]
         public IActionResult DeleteBook(string id){
             var book = _bookService.Get(id);
             if(book == null){
